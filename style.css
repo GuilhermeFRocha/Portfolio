@@ -1,0 +1,131 @@
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cabecalho {
+  width: 100%;
+  margin: 0 auto;
+  background:#1C1C1C;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.topics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.topics h1{
+  color: white;
+}
+
+.lista{
+  display: flex;
+}
+
+.lista li {
+  padding: 10px;
+  font-size: 17.6px;
+  font-family: 'Fira Code', monospace;
+  color: white;
+}
+
+.corpo {
+  width: 100%;
+  background: #000000;
+}
+
+.container2 {
+  width: 80%;
+  height: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.container2 img {
+  width: 500px;
+  height: 447px;
+}
+
+.caixa1 {
+  width: 50%;
+  color: white;
+  font-size: 17.6px;
+  font-family: 'Fira Code', monospace;
+} 
+
+.caixa1 .button {
+  font-size: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+
+.caixa1 img{
+  width: 22px;
+  height: 22px;
+}
+
+#name{
+  font-size: 2.3rem;
+  font-weight: 600;
+}
+
+.btn {
+  width: 200px;
+  background: #800080;
+  text-align: center;
+  border-radius: 19px;
+  padding: 15px 25px;
+  margin: 30px 0 0;
+}
+
+.caixa2 {
+  width: 50%; 
+}
+
+.caixa2 img {
+  border-radius: 19px;
+}
+
+.corpo1{
+  width: 100%;
+  background: #1f1e21;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.container3{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.img-perfil {
+  width: 40%;
+}
+
+.desc-perfil{
+  width: 50%;
+  font-size: 20px;
+  font-family: 'Fira Code', monospace;
+  color: white;
+}
+
+.desc-perfil h2 {
+  font-size: 32px;
+    text-align: center;
+    font-family: 'Fira Code', monospace;
+}
+
