@@ -1,6 +1,16 @@
+*{
+  transition: all 0.3s;
+}
+
 body {
   width: 100%;
   margin: 0 auto;
+  background: #111111;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .cabecalho {
@@ -35,19 +45,18 @@ body {
   font-size: 17.6px;
   font-family: 'Fira Code', monospace;
   color: white;
+  cursor: pointer;
 }
 
-.corpo {
-  width: 100%;
-  background: #000000;
+.lista li:hover {
+  color: #f42f54;
 }
 
-.container2 {
-  width: 80%;
-  height: 600px;
-  margin: 0 auto;
+.content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 100px 0;
 }
 
 .container2 img {
@@ -56,10 +65,11 @@ body {
 }
 
 .caixa1 {
-  width: 50%;
+  
   color: white;
   font-size: 17.6px;
   font-family: 'Fira Code', monospace;
+  line-height: 48px;
 } 
 
 .caixa1 .button {
@@ -77,21 +87,25 @@ body {
 }
 
 #name{
-  font-size: 2.3rem;
+  font-size: 1.7rem;
   font-weight: 600;
+  color: #f42f54;
 }
 
 .btn {
-  width: 200px;
-  background: #800080;
+  width: 235px;
   text-align: center;
   border-radius: 19px;
-  padding: 15px 25px;
-  margin: 30px 0 0;
+  border: 1px solid #f42f54;
+  padding: 7px;
+  margin: 25px 0 0;
+  background: transparent;
+  cursor: pointer;
+
 }
 
-.caixa2 {
-  width: 50%; 
+.btn:hover {
+  background: #f42f54;
 }
 
 .caixa2 img {
@@ -101,31 +115,147 @@ body {
 .corpo1{
   width: 100%;
   background: #1f1e21;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 50px 0;
 }
-.container3{
-  width: 80%;
-  margin: 0 auto;
+
+.sobre {
   display: flex;
   justify-content: space-between;
+  gap: 80px;
 }
 
 
-.img-perfil {
-  width: 40%;
+.img-perfil img {
+  border-radius: 50%;
+  background: #f42f54;
 }
 
-.desc-perfil{
+.desc-perfil {
   width: 50%;
   font-size: 20px;
   font-family: 'Fira Code', monospace;
   color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .desc-perfil h2 {
   font-size: 32px;
     text-align: center;
     font-family: 'Fira Code', monospace;
+    color: #f42f54;
 }
 
+.btn-sobre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-sobre .btn{
+  text-decoration: none;
+  color: white;
+  background: #f42f54;
+  padding: 10px 0;
+}
+
+.cont {
+  margin: 50px 0;
+}
+
+.title-pj {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  padding-bottom: 40px;
+}
+
+.card {
+  display: grid;
+ grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  width: 80%;
+  
+}
+
+.min-card {
+  
+  border-radius: 19px;
+  margin: 10px; 
+  padding: 50px 20px;
+  overflow: hidden;
+  background: #1f1e21;
+  border: 1px solid #1f1e21;
+  text-align: center;
+}
+
+.min-card:hover {
+ border: 1px solid #f42f54;
+ transition: 1s;
+
+}
+
+.min-card h3 {
+  font-size: 26px;
+  font-weight: bold;
+  font-family: 'Fira Code', monospace;
+  color: white;
+  text-align: center;
+}
+
+.min-card p {
+  font-size: 20px;
+  font-family: 'Fira Code', monospace;
+  color: white;
+  padding: 10px 10px;
+}
+
+
+.btn-pj {
+  padding: 10px;
+}
+
+.btn-pj:hover{
+  background: #f42f54;
+}
+
+.btn-pj .button-pj{
+  font-size: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  margin-top: 20px;
+  text-decoration: none;
+  color: white; 
+}
+
+.card-service{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+   margin: 0 auto;
+   width: 100%; 
+}
+
+.card-service .min-card{
+  background: #111111;
+}
+
+.icone {  
+  padding-bottom: 30px;
+}
+
+.footer {
+  background: (#f42f54);
+  color: #fff;  
+  text-align: center;
+  padding: 2rem 0;
+}
+.footer__title {
+  font-size: 2rem; 
+}
+
+.footer__icon {
+  font-size: 2.2rem;
+  color: #fff;
+  cursor: pointer;
+}

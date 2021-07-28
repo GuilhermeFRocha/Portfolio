@@ -7,7 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <title>Portfólio</title>
 </head>
 
@@ -20,10 +22,9 @@
         <h1>Portfólio</h1>
 
         <ul class="lista">
-          <li>Sobre mim</li>
-          <li>Projetos</li>
-          <li>Serviços</li>
-          <li>Conhecimentos</li>
+          <li><a href="/#sobre-mim">Sobre mim</a></li>
+          <li><a href="/#projetos">Projetos</a></li>
+          <li><a href="/#servicos">Serviços</a></li>
         </ul>
 
       </div>
@@ -31,69 +32,151 @@
   </header>
 
   <main>
-    <section class="corpo">
-    <nav class="container2">
+    <section class="container">
+    <div class="content">
       <div class= "caixa1">
         <h1>Olá, eu sou o
           <br> <span id="name">Guilherme Freitas</span>
           <br>Web Developer.
           </h1>
 
-          <div class="btn">
-        <a class="button"  href="a" > <img src="./img/git.png" alt=""> Github</a>
-      </div>
+          <button class="btn">
+            <i class='bx bxl-github bx-flashing' style='color:#fbfbfb;font-size: 20px;margin-right: 5px;' ></i>
+            <a class="button"  href="https://github.com/GuilhermeFRocha" target="_blank"> Github</a>
+          </button>
 
       </div>
       <div class="caixa2">
-        <img src="./img/Computer-People-66743.gif" alt="img" > 
+        
+        <section class="container sobre">
+          <div class="img-perfil">
+            <img src="./img/perfil-remove.png" alt="imagem">
+          </div>    
         
       </div>
-    </nav>
+    </div>
     </section>
 
-    <nav class="corpo1">
-    <section class="container3">
-      <div class="img-perfil">
-        <img src="./img/perfil-remove.png" alt="imagem">
-      </div>
-
+    <div class="corpo1">
+    <section id="sobre-mim" class="container sobre">
+      
+      <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_w9x4m9qf.json" background="#1f1e21"
+        border-radius="10dp" speed="1.5" style="width: 100%; height: 420px;" loop autoplay
+        class="skills__img lottie"></lottie-player>
       
       <div class="desc-perfil">
       <h2>Sobre mim</h2>
-      <p>Meu nome é Guilherme, tenho 22 anos e moro no Brasil, mais especificamente em Uberlandia MG. Atualmente estou
-        estudando por conta própria através de varias platafromas online.
+      <p>Meu nome é Guilherme, tenho 22 anos e moro em Uberlandia MG. Atualmente
+        estudo através de cursos online como a Alura, Origamid, Rocktseat e Curso em video.
       </p>
       <p>
-        Iniciei como Desenvolvedor Front End em 2021. Desde então venho dedicando aproximadamente 5 horas por dia aos
-        estudos.
+        Iniciei como Desenvolvedor Front End em 2020, desde então venho dedicando ao estudo de HTML, CSS e JS.
       </p>
       
-      <a  class="button" href="">Linkedin</a>
-      <a  c href="">Github</a>
+      <div class="btn-sobre">
+        <a  class="btn" href="https://www.linkedin.com/in/guilherme-freitas-dev/" target="_blank">Linkedin</a>
+      <a  class="btn" href="https://github.com/GuilhermeFRocha" target="_blank"> Github</a>
+      </div>
     </div>
     </section>
-    </nav>
-    <section>
-      <h2>Projetos</h2>
+  </div>
+    <section id="projetos" class="cont">
 
-      <article>
-        <div>
+      <h2 class="title-pj">Projetos</h2>
+
+      <div class="card">
+        <div class="min-card">
           <h3>
             Naruto
           </h3>
+          <p>O Naruto é um projeto pessoal onde contem informaçoes do anime e de alguns personagens e seus jutsus.</p>
+
+          <button class="btn btn-pj"> <a class="button-pj" href="https://guilhermefrocha.github.io/naruto-page/" target="_blank">Website</a> </button>
+
         </div>
-        <div>
-          <h3>Busca Endereço</h3>
-        </div>
-        <div>
+        <div class="min-card">
           <h3>Tabela Nutricionista</h3>
+          <p>Tabela que calcula o IMC do paciente, incluindo o nome, peso, altura e porcentagem de gordura. </p>
+          <button class="btn btn-pj"> <a class="button-pj" href="https://guilhermefrocha.github.io/nutritionist_table/" target="_blank">Website</a> </button>
         </div>
-        <div>
-          <h3>Financial Table</h3>
+        <div class="min-card">
+          <h3>Tabela Financeira</h3>
+          <p>Projeto desenvolvido no curso da Origamid, uma tabela para incluir, retirar e ver o total dos valores da sua empresa.</p>
+          <button class="btn btn-pj"> <a class="button-pj" href="https://guilhermefrocha.github.io/financial-table/" target="_blank">Website</a> </button>
         </div>
-      </article>
+      </div>
+
+      <div class="card">
+        <div class="min-card">
+          <h3>
+            Ceep
+          </h3>
+          <p>É um bloco de notas que usa uma API para armazenar os dados, dá pra incluir e excluir dados com data e descrição.</p>
+          <button class="btn btn-pj"> <a class="button-pj" href="https://guilhermefrocha.github.io/Ceep/" target="_blank">Website</a> </button>
+        </div>
+        <div class="min-card">
+          <h3>Bikcraft</h3>
+          <p>Página criada com HTML e CSS contendo grid e um sumario.</p>
+          <button class="btn btn-pj"> <a class="button-pj" href="https://guilhermefrocha.github.io/Bikcraft-origamid/" target="_blank">Website</a> </button>
+        </div>
+        <div class="min-card">
+          <h3>Analizador de Números</h3>
+          <p>Projeto desenvolvido com foco em JS, onde o programa identifica se o numero esta entre 1 e 100, após identificar subscreve na caixa em branco. </p>
+          <button class="btn btn-pj"> <a class="button-pj" href="">Website</a> </button>
+        </div>
+      </div>
     </section>
+
+    <div class="corpo1">
+    <section id="servicos" class="container ">
+      <h2 class="title-pj">
+        Serviços
+      </h2>
+
+      <div class="card-service">
+
+        <div class="min-card">
+          <img class="icone" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAADhUlEQVR4Xu2cMWgUURRF3w9RTHaiiK2IYCfiGIJoGu0FbXa3ULGx1UrLICgEK8HGMpUWQTKkEbTXxghRZ0kZsBHEwoBkN7Bhs18CsbHwcf++7zczN+2/c9+8c3ZIssU44U9SAi7pdA4XCkj8IaAACkhMIPF4PgEUkJhA4vF8AiggMYHE4/kEUEBiAonH8wnY7wK2ZtonhgN/XZy7It7nInIk8U6xx/8UkU/i3Oux4c7iZGf56ygDg5+AHxduHj7Y779wXq6NcgP7/1r/sjG+fdutvtoK2SVIgJ+5OtkbHFoR8WdChlbwmpWsLC6G7BUkoJs3n4u4WyEDK3zN06ws7qH7wQI2p9un3dCvifCb1D9gb7vx4cnG6vI3RAIsoJe3nnmRO8iQumSdl7lGp3iM7IsLONdc996dQobUKPsuK4tLyL6wgG7e2v1tP4EMqVF2IyuLY8i+IQL83wZkZQF3IjecOtvNW6b7w7CsbyA1UHS+9f4UABqgABCYdZwCrImCfRQAArOOU4A1UbCPAkBg1nEKsCYK9lEACMw6TgHWRME+CgCBWccpwJoo2EcBIDDrOAVYEwX7KAAEZh2nAGuiYB8FgMCs4xRgTRTsowAQmHWcAqyJgn0UAAKzjlOANVGwjwJAYNZxCrAmCvZRAAjMOk4B1kTBPgoAgVnHKcCaKNhHASAw6zgFWBMF+ygABGYdpwBromAfBYDArOMUYE0U7KMAEJh1nAKsiYJ9FAACs45TgDVRsI8CQGDWcQqwJgr2UQAIzDpOAdZEwT4KAIFZx/8HARsictR6sYr0/YuXdbQ/iPjzFQFmuoYX936qXJpFSuF3RWyebc475+aQIXXJOi8PG53iEbIvLGDvNZVfRGQMGVSD7EB2DhzP1ha/I7vCAnbLu3nriYjcRwZVPetF5qfK4gG6Z5CAPQkfRWQaHVjJvHNvs89Ll0N2CxbgZ9sTvd5wQZy7ETK4Ktd4JwtZt3fXrb/ph+wULOD3MO3v4pCb2k/XjPqKNlVA3QGP+mHQBFHAqISV6ykgMmCtngI0QpHPKSAyYK2eAjRCkc8pIDJgrZ4CNEKRz0cWEPn+al+v/h9Qe0KRAVBAZMBaPQVohCKfU0BkwFo9BWiEIp9TQGTAWj0FaIQin1NAZMBaPQVohCKfU0BkwFo9BWiEIp9TQGTAWj0FaIQin1NAZMBaPQVohCKf/wKfgPpw02uTKAAAAABJRU5ErkJggg=="/>
+          <h3>Criaçao de Sites</h3>
+          <p>Desenvolvimento de sites profissionais, sistemas web, blogs e lojas virtuais.</p>
+        </div>
+
+        <div class="min-card">
+          <img class="icone" src="./img/mobile-alt-regular-96.png" alt="">
+          <h3>Sites Responsivos </h3>
+          <p>Criação de sites responsivos para a melhor visualização em todas as resoluções.</p>
+        </div>
+
+        <div class="min-card">
+          <img class="icone" src="data:image/png;base64,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"/>
+          <h3>UI Design</h3>
+          <p>Desenho de Layouts que se adequam ao seu negócio de forma profissional e fiel no desenvolvimento.</p>
+        </div>
+
+        <div class="min-card">
+          <img class="icone" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAEUklEQVR4Xu2cy1ITQRSGT0/cJcFL6TNoqSTRKlcKWLyBJHkIS93BEhRY4k4X+ghWEp9ALfCyRSaUt2dAsWCSpdPWSAZjDJnuyUz/neSwTafP8H39d8+tI4j/oAQEtDoXJxYAHgQsgAWACYDLcwJYAJgAuDwngAWACYDLcwJYAJgAuDwngAWACYDLcwJYAJgAuDwngAWACYDLcwJYAJgAuDwngAWACYDLcwJYAJgAuDwngAWACYDLwxPgXatednx/Nus2nplk4RWqd+mUs5nffvHFZN3eWlABh4XqRUfI90R0XpJ4kHdrT03AaBUqiyRog4i++1LcmmrWvpmo268GTEA3/OMDk7SUa9YfpwmjXawsS6K1rhpQCRABfeF3iEiSa3m38TANCa1SZYMkLfbpGybBuACvWL4iSGwG086JkAU9zu3Ul5KU0C6Wn0gS9wf0CZFgVIBXuHNViMwWEZ2LgiuIVrJufT2qncrnXrGyJoiWFdruyUxmzuTCbExAZ+S/I6KzKiB8X85O7Ta+KrSNbHI4Xb7kOOItEV2IbEz0U5KcybuNTwpth25iRAASfkjIVgmpC7ABvs0SUhVgE/weCR9U1iEyMB2lJkAT/r7vy5tJzflRE3NrujpNjgzOxCJPBtKWkIoAXfjki9u53dpuFLgkP7dFQuICRgF+KNIGCYkKaJWqJZLyjeKp5j5i5PemCC0hMQEd+MFF1pTCVGEFfBuSkIiAUYYfVwIJMZ/bqe0oDLaBTYYWoAn/gHwxY3rBVYXUmY6Cq/XTCt85JCHmhpUwlABd+EL689nmy22Ffw7WpF1YuC6FE6xjRiTEFjCO8EPrJiXEEjDO8E1L0BYwCfBNStASMEnwTUlQFtAuLdyQ0nmleJ5/MAoLrupKH6wJJJwtSZRT+I7W2RELUCCa5qKsLCA4Tp6CIm1pjf6gNy0BkyYhzZEfqtQWMCkSTMCPlYDjeydHdz5Vb76N1KJsCv5QAsY1CSbhDy0gjgS+GffvQh5rDfjvoYbedGTVs4CRvx0dc02wSgLyqVgiCeiRwI8kIy8X/jZIVEDQLT+U16Af50JMpftRkICcdroZJp6AsHNdCfxilsrQ1myjKWEvyTeiTzrUzku64/9qYswkpCrBxjekU5uCukegDUmwEX4iV8KqsxJSgq3wjQr4c9vi6K3kYKfKmShxQtKjbLO+GtVO5XOvWF4VJFYi20r6ITNiNv+x9jmybUINjExBfaYj3qTXgWJcQFB38DZVWs+79ejRGmME8jbVLmi4jdrVFUmye2qDbE8NUUASEBbnnyqI8Uw4RvIHfuXoxzrkTNatP0+670H9eaXyPfmLXpvaFnXSsUATYBK4rbVYANgMC2ABYALg8pwAFgAmAC7PCWABYALg8pwAFgAmAC7PCWABYALg8pwAFgAmAC7PCWABYALg8pwAFgAmAC7PCWABYALg8pwAFgAmAC7PCWABYALg8pwAsIDfEnrvfy+9f9UAAAAASUVORK5CYII="/>
+          <h3>Código Semântico</h3>
+          <p>Estratégia e monitoração para seu negócio, fazendo com que seu site apareça cada vez melhor nas buscas.</p>
+        </div>
+      </div>
+    </section>
+  </div>
   </main>
+
+  <footer class="footer">
+    <p class="footer__title">Guilherme</p>
+    <div>
+       <a href="https://www.facebook.com/guilherme.freitas.902266/" class="footer__icon"><i class="bx bxl-facebook"></i></a>
+       <a href="https://www.instagram.com/guilhermefreitas07/" class="footer__icon"><i
+             class="bx bxl-instagram"></i></a>
+       <a href="" class="footer__icon"><i
+             class="bx bxl-whatsapp"></i></a>
+       <a href="https://github.com/GuilhermeFRocha" class="footer__icon"><i class='bx bxl-github'></i></a>
+       <a href="https://www.linkedin.com/in/guilherme-freitas-dev/" class="footer__icon"><i
+             class='bx bxl-linkedin'></i></a>
+    </div>
+    <p>&#169; 2021 copyright all right reserved</p>
+ </footer>
 </body>
 
 </html>
