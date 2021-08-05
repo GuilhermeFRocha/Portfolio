@@ -2,6 +2,10 @@
   transition: all 0.3s;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   margin: 0 auto;
