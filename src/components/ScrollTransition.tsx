@@ -1,8 +1,12 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, ReactNode } from "react";
 import "../app.css"; // importa um arquivo CSS com as animações de transição
 
-function ScrollTransition({ children }: any) {
-  const ref = useRef(null);
+interface ScrollTransitionProps {
+  children: ReactNode;
+}
+
+function ScrollTransition({ children }: ScrollTransitionProps) {
+  const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -10,7 +14,7 @@ function ScrollTransition({ children }: any) {
       const top = ref?.current?.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
 
-      if (top < windowHeight * 0.95) {
+      if (top! < windowHeight * 0.95) {
         // 80% da altura da janela
         setIsVisible(true);
       }
