@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 
 import { MyCarousel } from "./components/Carousel";
 
@@ -8,10 +8,11 @@ import {
   AiOutlineGithub,
   AiOutlineWhatsApp,
   AiOutlineHtml5,
+  AiOutlineMenu,
 } from "react-icons/ai";
 import { IoLogoCss3, IoLogoJavascript, IoLogoSass } from "react-icons/io";
 import { TbBrandNextjs } from "react-icons/tb";
-import { FaReact, FaNodeJs } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaTimes } from "react-icons/fa";
 import {
   SiStorybook,
   SiStyledcomponents,
@@ -43,18 +44,20 @@ import {
   Header,
   ImgPerfil,
   InfoBoxExperience,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  MobileMenu,
   NavBar,
   SocialMedia,
 } from "./styles";
 
-interface ItemsProps {
-  name: string;
-  title: string;
-  duration: string;
-  description: string;
-}
-
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   const [activeIndex, setActiveIndex] = useState(0);
   const [desc, setDesc] = useState(
     "Passe o cursor do mouse no card para ler..."
@@ -134,7 +137,7 @@ function App() {
     },
   ];
 
-  function handleClick(item: ItemsProps | any) {
+  function handleClick(item: SetStateAction<number>) {
     setActiveIndex(item);
   }
 
@@ -151,26 +154,64 @@ function App() {
           <img src={Logo} alt="Logo header" width={100} />
           <NavBar>
             <li>
-              <a href=""> Ínicio</a>
+              <a href="#about">Inicio</a>
             </li>
             <li>
-              <a href=""> Sobre mim</a>
+              <a href="#experience"> Experiências</a>
             </li>
             <li>
-              <a href=""> Experiências</a>
+              <a href="#project"> Projetos</a>
             </li>
             <li>
-              <a href=""> Projetos</a>
-            </li>
-            <li>
-              <a href=""> Conhecimentos</a>
+              <a href="#learning"> Conhecimentos</a>
             </li>
           </NavBar>
-        </ContainerHeader>
-      </Header>
 
+          <MobileMenu>
+            <MenuButton onClick={toggleMenu}>
+              {isOpen ? (
+                <FaTimes color="white" size="48px" />
+              ) : (
+                <AiOutlineMenu color="white" size="48px" />
+              )}
+            </MenuButton>
+          </MobileMenu>
+        </ContainerHeader>
+        {isOpen && (
+          <MenuList isOpen={isOpen}>
+            <MenuItem
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              <a href="#about">Inicio</a>
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              <a href="#experience">Experiências</a>
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              <a href="#project">Projetos</a>
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                setIsOpen(false);
+              }}
+            >
+              <a href="#learning"> Conhecimentos</a>
+            </MenuItem>
+          </MenuList>
+        )}
+      </Header>
       <main>
-        <ContainerAbout>
+        <ContainerAbout id="about">
           <ContentAbout>
             <ImgPerfil>
               <img src={Perfil} alt="perfil" />
@@ -214,7 +255,7 @@ function App() {
             </DescAbout>
           </ContentAbout>
         </ContainerAbout>
-        <ContainerExperience>
+        <ContainerExperience id="experience">
           <ContentExperience>
             <h2>Experiências</h2>
 
@@ -242,14 +283,14 @@ function App() {
           </ContentExperience>
         </ContainerExperience>
 
-        <ContainerProject>
+        <ContainerProject id="project">
           <ContentProject>
             <h2>Projetos</h2>
             <MyCarousel />
           </ContentProject>
         </ContainerProject>
 
-        <ContainerLearning>
+        <ContainerLearning id="learning">
           <ContentLearning>
             <DescLearning>
               <h2>Conhecimentos</h2>
@@ -275,7 +316,6 @@ function App() {
           </ContentLearning>
         </ContainerLearning>
       </main>
-
       <Footer>
         <div>
           <p>

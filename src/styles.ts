@@ -5,6 +5,10 @@ interface LinkCarouselProps
   novaCor: string;
 }
 
+interface MenuListProps {
+  isOpen: boolean;
+}
+
 export const Header = styled.header`
   background-color: #111;
   width: 100%;
@@ -26,6 +30,9 @@ export const NavBar = styled.ul`
   display: flex;
   align-items: center;
   gap: 40px;
+  @media (max-width: 425px) {
+    display: none;
+  }
 
   a {
     font-size: 1.2rem;
@@ -75,11 +82,20 @@ export const ContentAbout = styled.div`
   margin: 0 auto;
   justify-content: space-between;
   gap: 45px;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 export const ImgPerfil = styled.div`
   width: 90%;
+  @media (max-width: 768px) {
+    width: 100%;
 
+    padding-bottom: 25px;
+    margin: 0 auto;
+  }
   img {
     width: 100%;
     border-radius: 5px;
@@ -120,6 +136,7 @@ export const DescAbout = styled.div`
 export const SocialMedia = styled.ul`
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 
   a {
     background-color: #111;
@@ -154,12 +171,18 @@ export const ContentExperience = styled.div`
 export const DescExperience = styled.div`
   display: flex;
   gap: 40px;
+
+  @media (max-width: 425px) {
+    display: block;
+  }
 `;
 
 export const CompanyExperience = styled.ul`
   background-color: #111;
   height: max-content;
-
+  @media (max-width: 425px) {
+    margin: 40px 0;
+  }
   li {
     font-size: 1.2rem;
     font-weight: 400;
@@ -190,11 +213,17 @@ export const InfoBoxExperience = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 425px) {
+      display: block;
+    }
 
     h4 {
       font-size: 1.8rem;
       font-weight: 400;
       color: #fff;
+      @media (max-width: 425px) {
+        padding-bottom: 32px;
+      }
     }
   }
   h5 {
@@ -253,6 +282,11 @@ export const CardCarousel = styled.div`
   padding: 32px;
   border: 2px solid;
   max-width: 350px;
+  min-height: 314px;
+
+  @media (max-width: 1024px) {
+    min-height: 314px;
+  }
 
   h3 {
     color: #fff;
@@ -307,16 +341,36 @@ export const ContentLearning = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 8px;
+
+  @media (max-width: 1024px) {
+    display: block;
+  }
 `;
 
 export const DescLearning = styled.div`
   width: 50%;
+  @media (max-width: 1024px) {
+    margin: 0 auto;
+  }
+
+  @media (max-width: 425px) {
+    width: 85%;
+  }
 
   h2 {
     margin-bottom: 32px;
     color: #fff;
     font-size: 2.6rem;
     font-weight: 500;
+
+    @media (max-width: 1024px) {
+      text-align: center;
+    }
+
+    @media (max-width: 425px) {
+      /* font-size: 1.6rem; */
+      text-align: inherit;
+    }
   }
 
   p {
@@ -324,6 +378,11 @@ export const DescLearning = styled.div`
     line-height: 2rem;
     color: #9ca3af;
     font-size: 1.2rem;
+
+    @media (max-width: 1024px) {
+      padding-bottom: 30px;
+      text-align: center;
+    }
   }
 `;
 
@@ -335,11 +394,23 @@ export const CardsLearning = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 
+  @media (max-width: 1024px) {
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 768px) {
+    width: 85%;
+    grid-template-columns: 1fr 1fr;
+  }
+
   article {
     padding: 30px;
     border: 1px solid #444343;
     background-color: #1f1f1f;
     border-radius: 4px;
+    text-align: center;
+
     :hover {
       border: none;
     }
@@ -377,5 +448,51 @@ export const Footer = styled.footer`
         color: #986dff;
       }
     }
+  }
+`;
+
+export const MobileMenu = styled.nav`
+  display: none;
+
+  @media (max-width: 425px) {
+    display: block;
+  }
+`;
+
+export const MenuButton = styled.button`
+  display: none;
+
+  @media (max-width: 425px) {
+    display: block;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+`;
+
+export const MenuList = styled.ul<MenuListProps>`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 96px;
+  text-align: center;
+  background-color: #151515;
+  transition: 0.2s;
+  height: 100vh;
+
+  @media (max-width: 425px) {
+    display: ${({ isOpen }: any) => (isOpen ? "block" : "none")};
+  }
+`;
+
+export const MenuItem = styled.li`
+  a {
+    font-size: 1.6rem;
+    color: #9ca3af;
+  }
+
+  @media (max-width: 425px) {
+    margin-bottom: 48px;
   }
 `;
