@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useRef, useState } from "react";
 
 import { MyCarousel } from "./components/Carousel";
 
@@ -51,6 +51,8 @@ import {
   NavBar,
   SocialMedia,
 } from "./styles";
+import "./app.css";
+import ScrollTransition from "./components/ScrollTransition";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -147,12 +149,20 @@ function App() {
     setDesc(desc);
   };
 
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  const appClass = `app ${isLoaded ? "loaded" : ""}`;
+
   return (
     <>
       <Header>
         <ContainerHeader>
           <img src={Logo} alt="Logo header" width={100} />
-          <NavBar>
+          <NavBar className={appClass}>
             <li>
               <a href="#about">Inicio</a>
             </li>
@@ -217,7 +227,7 @@ function App() {
               <img src={Perfil} alt="perfil" />
             </ImgPerfil>
 
-            <DescAbout>
+            <DescAbout className={appClass}>
               <span>Sobre mim</span>
               <h2>Guilherme Freitas da Rocha</h2>
               <h3>Frontend Developer</h3>
@@ -256,64 +266,70 @@ function App() {
           </ContentAbout>
         </ContainerAbout>
         <ContainerExperience id="experience">
-          <ContentExperience>
-            <h2>Experiências</h2>
+          <ScrollTransition>
+            <ContentExperience>
+              <h2>Experiências</h2>
 
-            <DescExperience>
-              <CompanyExperience>
-                {company.map((item, index) => (
-                  <li
-                    key={index}
-                    className={index === activeIndex ? "active" : ""}
-                    onClick={() => handleClick(index)}
-                  >
-                    {item.name}
-                  </li>
-                ))}
-              </CompanyExperience>
-              <InfoBoxExperience>
-                <div>
-                  <h4>{activeCompany.title}</h4>
-                  <span>{activeCompany.duration}</span>
-                </div>
-                <h5>{activeCompany.name}</h5>
-                <p>{activeCompany.description}</p>
-              </InfoBoxExperience>
-            </DescExperience>
-          </ContentExperience>
+              <DescExperience>
+                <CompanyExperience>
+                  {company.map((item, index) => (
+                    <li
+                      key={index}
+                      className={index === activeIndex ? "active" : ""}
+                      onClick={() => handleClick(index)}
+                    >
+                      {item.name}
+                    </li>
+                  ))}
+                </CompanyExperience>
+                <InfoBoxExperience>
+                  <div>
+                    <h4>{activeCompany.title}</h4>
+                    <span>{activeCompany.duration}</span>
+                  </div>
+                  <h5>{activeCompany.name}</h5>
+                  <p>{activeCompany.description}</p>
+                </InfoBoxExperience>
+              </DescExperience>
+            </ContentExperience>
+          </ScrollTransition>
         </ContainerExperience>
 
         <ContainerProject id="project">
-          <ContentProject>
-            <h2>Projetos</h2>
-            <MyCarousel />
-          </ContentProject>
+          <ScrollTransition>
+            <ContentProject>
+              <h2>Projetos</h2>
+              <MyCarousel />
+            </ContentProject>
+          </ScrollTransition>
         </ContainerProject>
 
         <ContainerLearning id="learning">
-          <ContentLearning>
-            <DescLearning>
-              <h2>Conhecimentos</h2>
-              <p>{desc}</p>
-            </DescLearning>
+          <ScrollTransition>
+            <ContentLearning>
+              <DescLearning>
+                <h2>Conhecimentos</h2>
+                <p>{desc}</p>
+              </DescLearning>
 
-            <CardsLearning>
-              {learning.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <article
-                    key={index}
-                    onMouseOver={() => handleMouseOver(item.desc)}
-                    onMouseLeave={() =>
-                      setDesc("Passe o cursor do mouse no card para ler...")
-                    }
-                  >
-                    <Icon key={index} size={50} color="#986dff" />
-                  </article>
-                );
-              })}
-            </CardsLearning>
-          </ContentLearning>
+              <CardsLearning>
+                {learning.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <article
+                      key={index}
+                      onMouseOver={() => handleMouseOver(item.desc)}
+                      onMouseLeave={() =>
+                        setDesc("Passe o cursor do mouse no card para ler...")
+                      }
+                    >
+                      <Icon key={index} size={50} color="#986dff" />
+                    </article>
+                  );
+                })}
+              </CardsLearning>
+            </ContentLearning>
+          </ScrollTransition>
         </ContainerLearning>
       </main>
       <Footer>

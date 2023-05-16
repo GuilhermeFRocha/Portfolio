@@ -66,8 +66,8 @@ export const NavBar = styled.ul`
 
 export const ContainerAbout = styled.section`
   background-color: #111;
-  padding-top: 130px;
-  padding-bottom: 75px;
+  padding-top: 230px;
+  height: 100vh;
 `;
 
 export const ContentAbout = styled.div`

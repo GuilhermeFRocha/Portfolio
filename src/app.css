@@ -1,0 +1,21 @@
+.scroll-transition {
+  opacity: 0;
+  transform: translateY(20%);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.scroll-transition.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.app {
+  opacity: 0;
+  transform: translateX(20%);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.app.loaded {
+  opacity: 1;
+  transform: none;
+}
